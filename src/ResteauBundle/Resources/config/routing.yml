@@ -1,0 +1,12 @@
+resteau_homepage:
+    path:     /
+    defaults: { _controller: ResteauBundle:Default:index }
+
+resteau_ajoutplat:
+    path:     /ajout-plat
+    defaults: { _controller: ResteauBundle:Plat:ajout }
+
+reservation_path:
+    resource:     "@ResteauBundle/Resources/config/routing/reservation.yml"
+    prefix: /reservation
+

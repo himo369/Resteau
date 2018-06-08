@@ -1,0 +1,80 @@
+<?php
+
+namespace ResteauBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * CommandeDessert
+ *
+ * @ORM\Table(name="commande_dessert")
+ * @ORM\Entity(repositoryClass="ResteauBundle\Repository\CommandeDessertRepository")
+ */
+class CommandeDessert
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="nbr", type="integer")
+     */
+    private $nbr;
+
+     /**
+     * @ORM\ManyToOne(targetEntity="Commande")
+     * @ORM\JoinColumn(nullable=false)
+     */
+     	
+    private $commande;
+
+      /**
+     * @ORM\ManyToOne(targetEntity="Dessert")
+     * @ORM\JoinColumn(nullable=false)
+     */
+     	
+    private $dessert;
+
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set nbr
+     *
+     * @param integer $nbr
+     *
+     * @return CommandeDessert
+     */
+    public function setNbr($nbr)
+    {
+        $this->nbr = $nbr;
+
+        return $this;
+    }
+
+    /**
+     * Get nbr
+     *
+     * @return int
+     */
+    public function getNbr()
+    {
+        return $this->nbr;
+    }
+}
+
