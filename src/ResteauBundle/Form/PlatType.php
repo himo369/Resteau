@@ -13,7 +13,7 @@ class PlatType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('nom')->add('decription')->add('prix')        ;;
+        $builder->add('nom')->add('decription')->add('prix') ;;
     }
     
     /**
